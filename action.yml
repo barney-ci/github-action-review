@@ -1,13 +1,16 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Review'
+description: 'Run a Barney review job'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  barney-api-server:
+    description: 'Barney API server to use'
     required: true
-    default: '1000'
+  image:
+    description: 'Review image to build'
+    required: true
+    default: 'test'
 outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  status:
+    description: 'The review job status'
 runs:
   using: 'node12'
   main: 'dist/index.js'
