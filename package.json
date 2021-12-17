@@ -28,8 +28,6 @@
     "@actions/core": "^1.2.5",
     "@actions/github": "^5.0.0",
     "eventsource": "^1.1.0",
-    "ncc": "^0.3.6",
-    "node": "^17.2.0",
     "node-fetch": "^2.6.6"
   },
   "devDependencies": {
