@@ -10,14 +10,14 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    brances: [ main ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   review:
     runs-on: self-hosted
     steps:
-      - uses: barney.ci/github-action-review@v0
+      - uses: barney.ci/github-action-review@v0.1.0
         name: Run a Barney review job
         with:
           barney-api-server: https://barney-api.example.com
