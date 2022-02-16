@@ -31,6 +31,7 @@ async function run() {
             }
             const jobStatus = res.headers.get('location');
             core.info(`Created job: ${jobStatus}`);
+            core.notice(`${b5apisrv}${jobStatus}`);
             var es = new EventSource(`${b5apisrv}${jobStatus}`, {
                 headers: {'Accept': 'text/event-stream; version=v0'}
             });
