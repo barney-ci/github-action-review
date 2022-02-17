@@ -16705,6 +16705,7 @@ async function run() {
         const ghrepo = github.context.repo;
         const ref = `github.com/${ghrepo.owner}/${ghrepo.repo}%${image}#${github.context.sha}`
         const b5apisrv = core.getInput('barney-api-server', { required: true });
+        const bsycompatsrv = core.getInput('bsy-compat-server', { required: false });
         if ( b5apisrv == "" ) {
             core.setFailed("barney-api-server is a required input");
             return;
@@ -16721,7 +16722,9 @@ async function run() {
             }
             const jobStatus = res.headers.get('location');
             core.info(`Created job: ${jobStatus}`);
-            core.notice(`${b5apisrv}${jobStatus}`);
+            if (bsycompatsrv != "") {
+                core.notice(`Job Status: ${bsycompatsrv}${jobStatus}/status`);
+            }
             var es = new EventSource(`${b5apisrv}${jobStatus}`, {
                 headers: {'Accept': 'text/event-stream; version=v0'}
             });
