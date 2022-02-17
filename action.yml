@@ -4,6 +4,9 @@ inputs:
   barney-api-server:
     description: 'Barney API server to use'
     required: true
+  bsy-compat-server:
+    description: 'bsy compatibility server to use'
+    required: false
   image:
     description: 'Review image to build'
     required: true
