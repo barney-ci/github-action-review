@@ -13,7 +13,8 @@ async function run() {
             return;
         }
         const ghrepo = github.context.repo;
-        const ref = `github.com/${ghrepo.owner}/${ghrepo.repo}%${image}#${github.context.sha}`
+        const reponame = core.getInput('reponame') || `github.com/${ghrepo.owner}/${ghrepo.repo}`;
+        const ref = `${reponame}%${image}#${github.context.sha}`;
         const b5apisrv = core.getInput('barney-api-server', { required: true });
         const bsycompatsrv = core.getInput('bsy-compat-server', { required: false });
         if ( b5apisrv == "" ) {

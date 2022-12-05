@@ -11,6 +11,9 @@ inputs:
     description: 'Review image to build'
     required: true
     default: 'test'
+  reponame:
+    description: 'Reponame to use when generating the ref to build'
+    required: false
 outputs:
   status:
     description: 'The review job status'
