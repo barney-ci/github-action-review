@@ -1,3 +1,5 @@
+DEPRECATED, please use barney.ci/github-bridge
+
 ## Use
 
 To use this action you need to provide your own Barney API Server.  If you don't know what that is
